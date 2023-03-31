@@ -1,0 +1,30 @@
+{
+   "openapi": "3.0.0",
+   "info": {
+      "title": "API TIVIC BANK",
+      "description": "API desenvolvida por Alisson Rodrigues",
+      "version": "1.0",
+      "contact": {
+         "email": "alissonrodrigues565656@gmail.com"
+      }
+   },
+   "servers": [
+      {
+         "url": "http://127.0.0.1:2006/v1/",
+         "description": "API de teste local"
+      }
+   ],
+   "paths": {
+   },
+   "components": {
+      "schemas": {
+      },
+      "securitySchemes": {
+         "ApiKeyAuth": {
+            "type": "apiKey",
+            "name": "x-access-token",
+            "in": "header"
+         }
+      }
+   }
+}
