@@ -1,4 +1,4 @@
-import { UsersController } from '@controllers/users';
+import { UsersController } from '@controllers/UsersController';
 
 const user = new UsersController();
 
