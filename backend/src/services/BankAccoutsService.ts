@@ -11,6 +11,10 @@ export class BankAccountsService {
       return knex('bank_accounts').andWhere('id_bank_account', id).first()
    }
 
+   getBankAccountByUser (id: number): Knex.QueryBuilder<BankAccount> {
+      return knex('bank_accounts').andWhere('cod_user', id).first()
+   }
+
    setBankAccount (request: Partial<BankAccount>): Knex.QueryBuilder {
       return knex('bank_accounts').insert(request)
    }

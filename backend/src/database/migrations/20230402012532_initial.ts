@@ -15,7 +15,9 @@ export async function up(knex: Knex): Promise<void> {
 
       await knex.schema.createTable('bank_accounts', (table) => {
         table.increments('id_bank_account').primary()
-        table.string('account_number', 45).notNullable()
+        table.string('agency', 4).notNullable()
+        table.string('account_number', 8).notNullable()
+        table.string('account_checker', 1).notNullable()
         table.decimal('balance', 10, 2).notNullable()
         table.integer('cod_user').unsigned().references('id_user').inTable('users').notNullable()
 
