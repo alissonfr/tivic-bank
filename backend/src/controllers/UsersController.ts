@@ -3,6 +3,7 @@ import { User } from '@models/User'
 import { Response, Request } from 'express'
 import { BankAccountsService } from 'src/services/BankAccoutsService'
 import { UsersService } from 'src/services/UserService'
+import { generatePassword } from 'src/utils/auth'
 
 const userService = new UsersService()
 const bankAccountService = new BankAccountsService()
@@ -34,6 +35,8 @@ export class UsersController {
                return res.status(400).json({ mensagem: `O campo ${field} é obrigatório.` });
             }
          }
+
+         req.body.password = await generatePassword(req.body.password)
 
          const add = await userService.setUserWithBankAccount(req.body)
          const user: User = await userService.getUserByID(add)
