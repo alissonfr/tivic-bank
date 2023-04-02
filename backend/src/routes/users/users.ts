@@ -4,6 +4,7 @@ import { UsersController } from '@controllers/UsersController';
 const Route = Router();
 const user = new UsersController();
 
-Route.get("/", user.getUser);
+Route.get("/", user.getUsers);
+Route.post("/", user.setUser);
 
 export default Route
