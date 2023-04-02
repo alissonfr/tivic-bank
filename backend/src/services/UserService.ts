@@ -15,4 +15,17 @@ export class UsersService {
       return knex('users').insert(request)
    }
 
+   updateUser (request: Partial<User>): Knex.QueryBuilder {
+      return knex('users').update(request).where('id_user', request.id_user)
+   }
+
+   deleteUser (id: number): unknown {
+      try {
+         return knex.transaction(async function (trx) {
+            await trx('users').where('id_user', id).del()
+         })
+      } catch {
+         return new Error()
+      }
+   }
 }
