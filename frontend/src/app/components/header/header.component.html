@@ -1,0 +1,28 @@
+<header class="container">
+    <section class="top">
+        <img src="assets/images/logo.png" alt="Logo da TIVIC">
+
+        <div class="balance">
+            <div class="balance-col first">
+                <div class="texts">
+                    Saldo
+                    <span [ngClass]="!viewBalance ? 'hide' : '' ">R$ 46,61</span>
+                </div>
+                <fa-icon [icon]="viewBalance ? faEye : faEyeSlash" (click)="changeViewBalance()"></fa-icon>
+            </div>
+            <div class="balance-col second">
+                <div class="pfp">
+                    AR
+                </div>
+                <div class="texts" style="margin-right: 30px;">
+                    Olá, Alisson!
+                    <span>***92183</span>
+                </div>
+                <fa-icon [icon]="faGear"></fa-icon>
+            </div>
+            <div class="balance-col third">
+                SAIR
+            </div>
+        </div>
+    </section>
+</header>
