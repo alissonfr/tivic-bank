@@ -13,13 +13,16 @@ export class TransactionsController {
             'cod_bank_account'
          ]
          for (const field of requiredFields) {
-            if (!req.body[field]) {
+            if (!req.query[field]) {
                return res.status(400).json({ mensagem: `O campo ${field} é obrigatório.` });
             }
          }
 
-         const transactions = await transactionsService.getTransactions(req.body)
-         return res.json(transactions);
+         const transactions = await transactionsService.getTransactions(req.query)
+         if (transactions.length === 0) {
+            return res.status(203).json({ mensagem: 'Nenhuma transação para esta conta bancária' });
+         }
+         return res.json({transactions: transactions});
       } catch (err) {
          console.log(err)
          return res.status(500).json({ mensagem: 'Ocorreu um erro no servidor!' });
