@@ -19,3 +19,9 @@ body {
   position: fixed;
   right: 35px;
 }
+
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}

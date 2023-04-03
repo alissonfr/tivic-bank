@@ -66,12 +66,14 @@ main {
                     width: 120px;
                     min-height: 20px;
                     color: transparent;
-                    background-color: $grey-200;
-                    border-radius: 8px;
                     font-size: 14px;
                     font-weight: bold;
-
                     transition-duration: 0.3s;
+                    background: #eee;
+                    background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+                    border-radius: 5px;
+                    background-size: 200% 100%;
+                    animation: 1.5s shine linear infinite;
                 }
             }
 
@@ -157,6 +159,56 @@ main {
 
                         p.income {
                             color: #6ed69e;
+                        }
+                    }
+                }
+
+                .skeleton-transacao {
+                    margin: 15px 0;
+                    .first {
+                        small {
+                            background-color: $grey-200;
+                            margin: 2px 0;
+                            border-radius: 6px;
+                            background: #eee;
+                            background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+                            border-radius: 5px;
+                            background-size: 200% 100%;
+                            animation: 1.5s shine linear infinite;
+                        }
+                        small:nth-child(1) {
+                            width: 25px;
+                            height: 15px;
+                        }
+
+                        small:nth-child(2) {
+                            width: 20px;
+                            height: 10px;
+                        }
+                        
+                        small:nth-child(3) {
+                            width: 43px;
+                            height: 10px;
+                        }
+                    }
+                    
+                    .second {
+                        gap: 5px;
+                        span, p {
+                            background: #eee;
+                            background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+                            border-radius: 5px;
+                            background-size: 200% 100%;
+                            animation: 1.5s shine linear infinite;
+                        }
+                        span {
+                            width: 60px;
+                            height: 20px;
+                        }
+                        
+                        p {
+                            width: 45px;
+                            height: 21px;
                         }
                     }
                 }

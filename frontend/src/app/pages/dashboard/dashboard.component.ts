@@ -26,7 +26,7 @@ export class DashboardComponent implements OnInit {
   operation: number | null = null;
   balance: number = 0
 
-  viewBalance = true;
+  viewBalance = false;
 
   constructor(
     private bankAccountService: BankAccountService,
@@ -45,6 +45,7 @@ export class DashboardComponent implements OnInit {
 
   fetchBankAccountUser() {
     this.loading = true;
+    this.viewBalance = false;
 
     const data = {
       cod_user: this.user.id_user
@@ -91,6 +92,7 @@ export class DashboardComponent implements OnInit {
 
   fetchTransactions() {
     this.loading = true;
+    this.viewBalance = false;
 
     const data: any = {
       cod_bank_account: this.bankAccount.id_bank_account
@@ -102,8 +104,9 @@ export class DashboardComponent implements OnInit {
 
     this.transactionsService.fetchTransactions(data).subscribe({
       next: (res) => {
-        this.transactions = res.transactions
+        this.viewBalance = true;
 
+        this.transactions = res.transactions
         const daysOfWeek = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sab'];
         const months = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
         this.transactions.forEach(transaction => {

@@ -33,10 +33,10 @@
                             <span [ngClass]="!viewBalance ? 'hide' : isAmountNegative() ? 'negative' : '' ">R$ {{bankAccount.balance || 0.00}}</span>
                         </div>
                         <div class="extrato-filters">
-                            <button (click)="changeOperation(1)" [ngClass]="operation === 1 ? 'selected': ''">Entrada</button>
-                            <button (click)="changeOperation(2)" [ngClass]="operation === 2 ? 'selected': ''">Saída</button>
+                            <button (click)="changeOperation(2)" [ngClass]="operation === 2 ? 'selected': ''">Entrada</button>
+                            <button (click)="changeOperation(1)" [ngClass]="operation === 1 ? 'selected': ''">Saída</button>
                         </div>
-                        <div class="extrato-recentes">
+                        <div class="extrato-recentes" *ngIf="viewBalance">
                             <div class="transacao" *ngFor="let transaction of transactions">
                                 <div class="first">
                                     <small>{{transaction.day_week}}</small>
@@ -47,6 +47,44 @@
                                 <div class="second">
                                     <span>{{transaction.operation === 1 ? 'Saque' : 'Deposito'}}</span>
                                     <p [ngClass]="transaction.operation === 1 ? 'expense': 'income'">{{transaction.amount}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="extrato-recentes" *ngIf="!viewBalance">
+                            <div class="transacao skeleton-transacao">
+                                <div class="first">
+                                    <small></small>
+                                    <small></small>
+                                    <small></small>
+                                </div>
+
+                                <div class="second">
+                                    <span></span>
+                                    <p></p>
+                                </div>
+                            </div>
+                            <div class="transacao skeleton-transacao">
+                                <div class="first">
+                                    <small></small>
+                                    <small></small>
+                                    <small></small>
+                                </div>
+
+                                <div class="second">
+                                    <span></span>
+                                    <p></p>
+                                </div>
+                            </div>
+                            <div class="transacao skeleton-transacao">
+                                <div class="first">
+                                    <small></small>
+                                    <small></small>
+                                    <small></small>
+                                </div>
+
+                                <div class="second">
+                                    <span></span>
+                                    <p></p>
                                 </div>
                             </div>
                         </div>
