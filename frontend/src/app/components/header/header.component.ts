@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { faEye, faGear, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { User } from 'src/app/models/user';
@@ -17,11 +17,13 @@ export class HeaderComponent implements OnInit {
   user!: User;
   username: string = ''
   userInitials: string = ''
-  viewBalance = true;
-
+  
   @Input() balance: number = 0;
   @Input() accountNumber: string = '';
-
+  
+  @Input() viewBalance: boolean;
+  @Output() toggleViewBalance = new EventEmitter<void>();
+  
   constructor(
     private readonly router: Router
   ) {}

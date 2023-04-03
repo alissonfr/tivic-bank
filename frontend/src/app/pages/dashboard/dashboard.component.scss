@@ -54,6 +54,10 @@ main {
                     width: 120px;
                 }
 
+                span.negative {
+                    color: #D14F4F;
+                }
+
                 span.hide {
                     color: $grey-200;
                     font-size: 14px;
@@ -101,12 +105,13 @@ main {
                 margin-bottom: 16px;
                 margin-left: 16px;
                 margin-top: 15px;
-                padding: 10px 5px;
+                padding: 10px 15px;
 
                 .transacao {
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
+                    margin: 10px 0;
 
                     .first {
                         display: flex;

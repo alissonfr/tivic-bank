@@ -17,6 +17,7 @@ import { CustomCurrencyMaskConfig } from 'src/app/utils/currency-mask-config.uti
     ReactiveFormsModule,
     NgxMaskDirective,
     NgxMaskPipe,
+    CurrencyMaskModule
   ],
   exports: [
     CadastrarTransacaoComponent

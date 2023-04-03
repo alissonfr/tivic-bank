@@ -8,7 +8,7 @@
                     Saldo
                     <span [ngClass]="!viewBalance ? 'hide' : '' ">R$ {{balance}}</span>
                 </div>
-                <fa-icon [icon]="viewBalance ? faEye : faEyeSlash" (click)="changeViewBalance()"></fa-icon>
+                <fa-icon [icon]="viewBalance ? faEye : faEyeSlash" (click)="toggleViewBalance.emit()"></fa-icon>
             </div>
             <div class="balance-col second">
                 <div class="pfp">

@@ -37,6 +37,8 @@ export class CadastrarTransacaoComponent {
     this.userData = Security.getUser();
   }
 
+  
+
   closeModal() {
     this.modalService.dismissAll();
     this.passEntry.emit(1);
@@ -48,9 +50,13 @@ export class CadastrarTransacaoComponent {
     this.createTransaction(data);
   }
 
-  createTransaction(data: Partial<Transaction>) {
+  createTransaction(data: Transaction) {
     data.operation = this.bankAccount.operation;
     data.cod_bank_account = this.bankAccount.cod_bank_account;
+
+    if(this.bankAccount.operation === 1) {
+      data.amount = -data.amount;
+    }
     this.transactionsService.setTransaction(data).subscribe({
       next: (res) => {
         this.isLoading = false;

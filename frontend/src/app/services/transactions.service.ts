@@ -14,7 +14,7 @@ export class TransactionsService {
 
   constructor(private http: HttpClient) {}
 
-  fetchTransactionsr(data: Partial<ParamsGetTransactions>): Observable<ResGetTransactions> {
+  fetchTransactions(data: Partial<ParamsGetTransactions>): Observable<ResGetTransactions> {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',

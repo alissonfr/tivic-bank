@@ -3,7 +3,12 @@ export interface Transaction {
     amount: number;
     operation: number;
     cod_bank_account: number;
-    date_created?: Date;
+    date_created: Date;
+
+    day_week: string;
+    day: number
+    month: string;
+    year: string;
 }
 
 export interface ResGetTransactions {
