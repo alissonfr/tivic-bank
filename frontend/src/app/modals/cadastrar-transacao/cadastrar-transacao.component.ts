@@ -50,7 +50,7 @@ export class CadastrarTransacaoComponent {
 
   createTransaction(data: Partial<Transaction>) {
     data.operation = this.bankAccount.operation;
-    data.cod_bank_account = this.bankAccount.operation;
+    data.cod_bank_account = this.bankAccount.cod_bank_account;
     this.transactionsService.setTransaction(data).subscribe({
       next: (res) => {
         this.isLoading = false;
