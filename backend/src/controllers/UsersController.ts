@@ -2,7 +2,7 @@ import { BankAccount } from '@models/BankAccount'
 import { User } from '@models/User'
 import { Response, Request } from 'express'
 import { BankAccountsService } from 'src/services/BankAccoutsService'
-import { UsersService } from 'src/services/UserService'
+import { UsersService } from 'src/services/UsersService'
 import { generatePassword } from 'src/utils/auth'
 
 const userService = new UsersService()

@@ -1,6 +1,6 @@
 import { User } from '@models/User'
 import { Response, Request } from 'express'
-import { UsersService } from 'src/services/UserService'
+import { UsersService } from 'src/services/UsersService'
 import { comparePasswords, generateToken } from 'src/utils/auth'
 
 const userService = new UsersService()
