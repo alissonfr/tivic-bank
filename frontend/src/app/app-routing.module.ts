@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
 import { LoginComponent } from './pages/login/login.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 const routes: Routes = [
   { 
@@ -13,6 +14,10 @@ const routes: Routes = [
   { 
     path: 'login', 
     component: LoginComponent
+  },
+  { 
+    path: 'registrar', 
+    component: RegisterComponent
   },
   {
     path: 'dashboard',

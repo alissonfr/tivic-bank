@@ -13,7 +13,7 @@
                 <img src="assets/images/logo.png" alt="Logo da TIVIC">
             </div>
             <div class="content">
-                <h4>Bem-vindo!</h4>
+                <h4>Bem-vindo de volta!</h4>
                 <h2>Faça o login no Internet Banking da TIVIC</h2>
           
                 <form class="form-container" [formGroup]="form" (ngSubmit)="onSubmit()">
@@ -46,7 +46,7 @@
                         <input type="radio" id="remember-password" />
                         <label for="remember-password">Lembrar senha</label>
                       </div>
-                      <p>Ainda não possui uma conta? <a href="">Cadastre-se</a></p>
+                      <p>Ainda não possui uma conta? <a [routerLink]="['/registrar']">Cadastre-se</a></p>
                     </footer>
                     <button
                     type="submit"
