@@ -6,7 +6,7 @@
             <div class="balance-col first">
                 <div class="texts">
                     Saldo
-                    <span [ngClass]="!viewBalance ? 'hide' : '' ">R$ 46,61</span>
+                    <span [ngClass]="!viewBalance ? 'hide' : '' ">R$ {{balance}}</span>
                 </div>
                 <fa-icon [icon]="viewBalance ? faEye : faEyeSlash" (click)="changeViewBalance()"></fa-icon>
             </div>
@@ -16,7 +16,7 @@
                 </div>
                 <div class="texts" style="margin-right: 30px;">
                     {{'Olá, ' + username + '!'}}
-                    <span>***92183</span>
+                    <span>{{accountNumber}}</span>
                 </div>
                 <fa-icon [icon]="faGear"></fa-icon>
             </div>

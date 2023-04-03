@@ -1,4 +1,7 @@
-<app-header></app-header>
+<app-header
+    [balance]="bankAccount.balance"
+    [accountNumber]="bankAccount.account_number + '-' + bankAccount.account_checker"
+></app-header>
 
 <main>
     <section class="container">
@@ -6,10 +9,10 @@
             <div class="col-sm-1"></div>
             <div class="col-sm-10">
                 <div class="operations">
-                    <div class="deposit">
+                    <div class="deposit" (click)="openModalNewTransaction(2)">
                         Depositar
                     </div>
-                    <div class="withdraw">
+                    <div class="withdraw" (click)="openModalNewTransaction(1)">
                         Sacar
                     </div>
                 </div>
@@ -25,7 +28,7 @@
                         </div>
                         <div class="extrato-balance">
                             Saldo
-                            <span [ngClass]="!viewBalance ? 'hide' : '' ">R$ 46,61</span>
+                            <span [ngClass]="!viewBalance ? 'hide' : '' ">R$ {{bankAccount.balance}}</span>
                         </div>
                         <div class="extrato-filters">
                             <button (click)="changeOperation(1)" [ngClass]="operation === 1 ? 'selected': ''">Entrada</button>

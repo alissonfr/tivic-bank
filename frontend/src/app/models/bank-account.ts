@@ -8,3 +8,11 @@ export interface BankAccount {
     date_created?: Date;
     date_updated?: Date;
 }
+
+export interface ParamsBankAccount {
+    cod_user: number;
+}
+
+export interface ResGetBankAccountUser {
+    bank_account: BankAccount;
+}

@@ -1,0 +1,39 @@
+<div class="main-content">
+    <header class="header-content">
+      <h4>{{ title }}</h4>
+      <button (click)="closeModal()">
+        X
+      </button>
+    </header>
+  
+    <form [formGroup]="form">
+      <section class="form-wrapper">
+        <div class="input-wrapper">
+          <label for="amount">Valor</label>
+          <input
+            currencyMask
+            type="text"
+            placeholder="R$100,00"
+            formControlName="amount"
+            id="amount"
+          />
+          <span *ngIf="verifyFieldIsValid('amount')">
+            Valor é obrigatório
+          </span>
+        </div>
+      </section>
+      <footer class="footer-modal">
+        <div class="status">
+        </div>
+        <button 
+          type="submit" 
+          [disabled]="form.invalid || isLoading"
+          (click)="onSubmit()"
+        >
+          Salvar
+        </button>
+      </footer>
+    </form>
+  </div>
+  
+  

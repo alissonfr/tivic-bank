@@ -6,7 +6,6 @@ export interface FormLogin {
   }  
 
 export interface ResponseLogin {
-  refreshTokne: string;
   token: string;
   user: User;
 }
