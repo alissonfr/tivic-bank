@@ -13,6 +13,6 @@ export class LoginService {
   constructor(private http: HttpClient) {}
 
   login(data: FormLogin): Observable<ResponseLogin> {
-    return this.http.post<ResponseLogin>(`${this.apiUrl}users/login`, data);
+    return this.http.post<ResponseLogin>(`${this.apiUrl}login`, data);
   }
 }

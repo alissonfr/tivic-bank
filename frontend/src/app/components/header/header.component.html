@@ -12,15 +12,15 @@
             </div>
             <div class="balance-col second">
                 <div class="pfp">
-                    AR
+                    {{userInitials}}
                 </div>
                 <div class="texts" style="margin-right: 30px;">
-                    Olá, Alisson!
+                    {{'Olá, ' + username + '!'}}
                     <span>***92183</span>
                 </div>
                 <fa-icon [icon]="faGear"></fa-icon>
             </div>
-            <div class="balance-col third">
+            <div class="balance-col third" (click)="logout()">
                 SAIR
             </div>
         </div>

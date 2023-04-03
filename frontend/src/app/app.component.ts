@@ -4,10 +4,7 @@ import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
-  template: `
-  <app-header *ngIf="showHeader" />
-  <router-outlet></router-outlet>
-`
+  template: '<router-outlet></router-outlet>'
 })
 export class AppComponent implements OnInit {
   showHeader: boolean = true;

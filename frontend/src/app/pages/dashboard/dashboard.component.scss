@@ -1,0 +1,208 @@
+@import '../../../scss/variables.scss';
+@import '../../../scss/rem-calc.scss';
+
+main {
+    padding-top: 50px;
+    background-color: $background;
+    height: 100vh;
+
+    .box-card {
+        width: 100%;
+        height: 60vh;
+        border-radius: 8px;
+        border: 1px solid rgb(222, 223, 228);
+        background-color: rgb(255, 255, 255);
+        position: relative;
+        overflow: hidden;
+        padding: 15px 15px;
+
+        .extrato {
+            display: flex;
+            flex-direction: column;
+            max-height: 100%;
+
+            .extrato-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                span {
+                    display: block;
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: $main-1;
+                }
+
+                fa-icon {
+                    font-size: 16px;
+                    color: $main-1;
+                    cursor: pointer;
+                }
+            }
+
+            .extrato-balance {
+                display: flex;
+                flex-direction: column;
+                margin-top: 25px;
+
+                span {
+                    color: $green-500;
+                    font-size: 14px;
+                    font-weight: 500;
+                    transition-duration: 0.3s;
+                    margin-right: 15px;
+                    width: 120px;
+                }
+
+                span.hide {
+                    color: $grey-200;
+                    font-size: 14px;
+                    font-weight: bold;
+                    transition-duration: 0.3s;
+                    width: 120px;
+                    min-height: 20px;
+                    color: transparent;
+                    background-color: $grey-200;
+                    border-radius: 8px;
+                    font-size: 14px;
+                    font-weight: bold;
+
+                    transition-duration: 0.3s;
+                }
+            }
+
+            .extrato-filters {
+                margin-top: 20px;
+
+                button {
+                    background-color: white;
+                    border: 1px solid #dedfe4;
+                    padding: 4px 16px;
+                    border-radius: 50px;
+                    font-size: 14px;
+                    color: #8c91a9;
+                    font-weight: 400;
+                    margin-right: 8px;
+                    outline: none;
+                    min-width: auto;
+                }
+
+                button.selected {
+                    background-color: #f5f6fa;
+                    border-color: #dedfe4;
+                    color: #6a6e81;
+                }
+            }
+
+            .extrato-recentes {
+                max-height: 100%;
+                overflow: hidden scroll;
+                margin-right: 8px;
+                margin-bottom: 16px;
+                margin-left: 16px;
+                margin-top: 15px;
+                padding: 10px 5px;
+
+                .transacao {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    .first {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-direction: column;
+
+                        small {
+                            margin-top: -4px;
+                            font-size: 10px;
+                        }
+
+                        small.day {
+                            margin-top: -2px;
+                            font-size: 14px;
+                        }
+                    }
+
+                    .second {
+                        display: flex;
+                        align-items: end;
+                        justify-content: center;
+                        flex-direction: column;
+
+                        span {
+                            color: #6c757d;
+                            font-size: 14px;
+                            margin-top: 2px;
+                            font-weight: 300;
+                        }
+
+                        p {
+                            margin-bottom: 0;
+                            color: #6c757d;
+                            font-size: 14px;
+                            margin-top: 2px;
+                            font-weight: 500;
+                        }
+
+                        p.expense {
+                            color: #D14F4F;
+                        }
+
+                        p.income {
+                            color: #6ed69e;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .operations {
+        display: flex;
+        justify-content: space-between;
+        gap: 25px;
+        margin: 25px 50px;
+        .deposit, .withdraw  {
+            height: 40%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid rgb(222, 223, 228);
+            background-color: rgb(255, 255, 255);
+            position: relative;
+            overflow: hidden;
+            padding: 15px 15px;
+
+            color: #FFF;
+            font-size: 22px;
+            font-weight: 700;
+            transition: all .20s;
+            cursor: pointer;
+        }
+        
+        .deposit {
+            background-color: #6ed69e;
+
+            &:hover {
+                color: #6ed69e;
+                border: 1px solid #6ed69e;
+                background-color: #FFF;
+            }
+        }
+        
+        .withdraw {
+            background-color: #D14F4F;
+
+            &:hover {
+                color: #D14F4F;
+                border: 1px solid #D14F4F;
+                background-color: #FFF;
+            }
+        }
+    }
+}

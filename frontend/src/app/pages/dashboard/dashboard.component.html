@@ -1,1 +1,54 @@
-<p>dashboard works!</p>
+<app-header></app-header>
+
+<main>
+    <section class="container">
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <div class="operations">
+                    <div class="deposit">
+                        Depositar
+                    </div>
+                    <div class="withdraw">
+                        Sacar
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <div class="box-card">
+                    <div class="extrato">
+                        <div class="extrato-header">
+                            <span>Extrato</span>
+                            <fa-icon [icon]="viewBalance ? faEye : faEyeSlash" (click)="changeViewBalance()"></fa-icon>
+                        </div>
+                        <div class="extrato-balance">
+                            Saldo
+                            <span [ngClass]="!viewBalance ? 'hide' : '' ">R$ 46,61</span>
+                        </div>
+                        <div class="extrato-filters">
+                            <button (click)="changeOperation(1)" [ngClass]="operation === 1 ? 'selected': ''">Entrada</button>
+                            <button (click)="changeOperation(2)" [ngClass]="operation === 2 ? 'selected': ''">Saída</button>
+                        </div>
+                        <div class="extrato-recentes">
+                            <div class="transacao">
+                                <div class="first">
+                                    <small>qui</small>
+                                    <small class="day">30</small>
+                                    <small>mar 2023</small>
+                                </div>
+
+                                <div class="second">
+                                    <span>Saque</span>
+                                    <p [ngClass]="operation === 1 ? 'income': 'expense'">- R$ 46,66</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+    </section>
+</main>
