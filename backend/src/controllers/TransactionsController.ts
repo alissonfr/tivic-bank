@@ -20,7 +20,7 @@ export class TransactionsController {
 
          const transactions = await transactionsService.getTransactions(req.query)
          if (transactions.length === 0) {
-            return res.status(203).json({ mensagem: 'Nenhuma transação para esta conta bancária' });
+            return res.status(203).json({ transactions, mensagem: 'Nenhuma transação para esta conta bancária' });
          }
          return res.json({transactions: transactions});
       } catch (err) {

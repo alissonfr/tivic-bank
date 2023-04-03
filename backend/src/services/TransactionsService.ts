@@ -4,7 +4,14 @@ import { Transaction } from '@models/Transaction'
 
 export class TransactionsService {
    getTransactions (request: Partial<Transaction>): Knex.QueryBuilder<Transaction> {
-      return knex('transactions').where('cod_bank_account', request.cod_bank_account)
+      return knex('transactions')
+      .where('cod_bank_account', request.cod_bank_account)
+      .andWhere(function (): void {
+         if (request.operation) {
+            this.where('operation', request.operation)
+         }
+      })
+      .orderBy('date_created', 'desc')
    }
 
    getTransactionByID (id: number): Knex.QueryBuilder<Transaction> {
