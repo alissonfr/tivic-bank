@@ -266,4 +266,10 @@ main {
             }
         }
     }
+
+    .col-sm-1 {
+        @media (max-width: 1024px) {
+            display: none;
+          }
+    }
 }

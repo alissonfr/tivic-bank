@@ -43,6 +43,10 @@ main {
                 }
             }
         }
+
+        @media (max-width: 1024px) {
+            display: none;
+          }
     }
 
     .second-col {
@@ -212,5 +216,9 @@ main {
                 }
             }
         }
+
+        @media (max-width: 1024px) {
+            width: 100%;
+          }
     }
 }
