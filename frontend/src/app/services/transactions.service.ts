@@ -14,6 +14,13 @@ export class TransactionsService {
 
   constructor(private http: HttpClient) {}
 
+  private httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'x-access-token': Security.getToken()
+    })
+  };
+
   fetchTransactions(data: Partial<ParamsGetTransactions>): Observable<ResGetTransactions> {
     const httpOptions = {
       headers: new HttpHeaders({
@@ -29,6 +36,8 @@ export class TransactionsService {
   }
 
   setTransaction(data: Partial<Transaction>): Observable<ResSetTransaction> {
-    return this.http.post<ResSetTransaction>(`${this.apiUrl}transactions/`, data);
+    return this.http.post<ResSetTransaction>(`${this.apiUrl}transactions/`, 
+    data, 
+    this.httpOptions);
   }
 }

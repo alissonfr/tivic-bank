@@ -1,6 +1,6 @@
 import { Knex } from "knex";
 import { generatePassword } from '../../utils/auth'
-import { generateRandomNumber } from 'src/utils/random'
+import { generateRandomNumber } from '../../utils/random'
 
 export async function seed(knex: Knex): Promise<void> {
     await knex("users").del();
