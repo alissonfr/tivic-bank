@@ -43,7 +43,6 @@ DB_USER = root
 DB_PASSWORD = admin
 ```
 
-
 6. Inicie o servidor:
 
 ```bash

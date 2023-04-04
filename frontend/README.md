@@ -17,3 +17,6 @@ npm start
 ```
 
 3. Abra o navegador e acesse http://localhost:4200.
+- Usuário padrão pré cadastrado para testes:
+    - Email: alisson@gmail.com
+    - Senha: teste
