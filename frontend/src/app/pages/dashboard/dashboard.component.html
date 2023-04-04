@@ -1,6 +1,6 @@
 <app-header
     [balance]="balance"
-    [accountNumber]="bankAccount.account_number + '-' + bankAccount.account_checker"
+    [accountNumber]="accountNumber"
     [viewBalance]="viewBalance" 
     (toggleViewBalance)="toggleViewBalance()"
 ></app-header>
@@ -30,7 +30,7 @@
                         </div>
                         <div class="extrato-balance">
                             Saldo
-                            <span [ngClass]="!viewBalance ? 'hide' : isAmountNegative() ? 'negative' : '' ">R$ {{bankAccount.balance || 0.00}}</span>
+                            <span [ngClass]="!viewBalance ? 'hide' : isAmountNegative() ? 'negative' : '' ">R$ {{balance || 0.00}}</span>
                         </div>
                         <div class="extrato-filters">
                             <button (click)="changeOperation(2)" [ngClass]="operation === 2 ? 'selected': ''">Entrada</button>

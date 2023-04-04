@@ -25,6 +25,7 @@ export class DashboardComponent implements OnInit {
   loading = false;
   operation: number | null = null;
   balance: number = 0
+  accountNumber: string = ''
 
   viewBalance = false;
 
@@ -55,6 +56,7 @@ export class DashboardComponent implements OnInit {
       next: (res) => {
         this.bankAccount = res.bank_account
         this.balance = res.bank_account.balance
+        this.accountNumber = res.bank_account.account_number + '-' + res.bank_account.account_checker
         console.log(this.bankAccount)
         this.fetchTransactions();
       },
