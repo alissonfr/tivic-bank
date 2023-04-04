@@ -23,12 +23,12 @@ cd backend
 npm install
 ```
 
-3. Execute o script MySQL abaixo para criar o schema do banco de dados
+3. Execute o script abaixo no seu MySQL para criar o schema do banco de dados
 ```SQL
 CREATE DATABASE tivic_bank;
 ```
 
-4. Execute os comandos para a criação das tabelas no MySQL e a população dessas tabelas com dados de exemplo:
+4. Ainda na pasta /backend, execute os comandos para a criação das tabelas no MySQL e a população dessas tabelas com dados de exemplo:
 ```bash
 npm run migrate
 npm run seed
@@ -36,11 +36,18 @@ npm run seed
 
 5. Caso seja necessário, configure as variáveis de ambiente no arquivo .env, preenchendo os valores de DB_HOST, DB_PORT, DB_USER, DB_PASSWORD com as informações do banco de dados MySQL criado anteriormente.
 
+```javascript
+DB_HOST = localhost
+DB_PORT = 3306
+DB_USER = root
+DB_PASSWORD = admin
+```
+
 
 6. Inicie o servidor:
 
 ```bash
-npm start
+npm run start:dev
 ```
 
 7. Abra outro terminal, navegue até a pasta do frontend e instale as dependências:
@@ -55,6 +62,9 @@ npm start
 ```
 
 9. Abra o navegador e acesse http://localhost:4200.
+- Usuário padrão pré cadastrado para testes:
+    - Email: alisson@gmail.com
+    - Senha: teste
 
 ## Funcionalidades
 A aplicação permite que os usuários realizem as seguintes operações:
