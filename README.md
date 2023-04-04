@@ -64,6 +64,7 @@ A aplicação permite que os usuários realizem as seguintes operações:
 - Saque em conta corrente
 - Cadastro de usuário e conta corrente
 - Cadastro e listagem de transações
+- Login de usuário e autenticação com criptografia de senha
 
 ## Estrutura do projeto
 O projeto está organizado da seguinte forma:
