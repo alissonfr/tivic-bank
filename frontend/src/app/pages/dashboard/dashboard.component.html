@@ -49,6 +49,7 @@
                                     <p [ngClass]="transaction.operation === 1 ? 'expense': 'income'">{{transaction.amount}}</p>
                                 </div>
                             </div>
+                            <h5 *ngIf="!transactions.length">Nenhuma transação cadastrada</h5>
                         </div>
                         <div class="extrato-recentes" *ngIf="!viewBalance">
                             <div class="transacao skeleton-transacao">
